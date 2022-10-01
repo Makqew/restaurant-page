@@ -1,5 +1,5 @@
 module.exports = {
-    content: ["./src/index.js", "./dist/index.html"],
+    content: ["./src/index.js", "./src/preload.js", "./dist/index.html"],
     theme: {
       extend: {},
     },
