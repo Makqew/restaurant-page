@@ -1,20 +1,8 @@
+// Trying to implement tabs
 export function renderHtml(){
     let main = document.getElementsByTagName('main')[0];
-    let navBar = `
-        <nav class="w-full bg-slate-100">
-            <ul class="px-2 md:px-24 lg:px-48 flex flex-row w-full">
-                <li class="basis-4/5 px-4 py-4"><i class="
-                hover:cursor-pointer hover:text-sky-500">Logo</i></li>
-                <li class="px-4 py-4 basis-1/5 text-2xl 
-                hover:bg-slate-200 hover:cursor-pointer hover:text-sky-500">Home</li>
-                <li class="px-4 py-4 basis-1/5 text-2xl 
-                hover:bg-slate-200 hover:cursor-pointer hover:text-sky-500">Menu</li>
-                <li class="px-4 py-4 basis-1/5 text-2xl 
-                hover:bg-slate-200 hover:cursor-pointer hover:text-sky-500">Contact</li>
-            </ul>
-        </nav>`;
-
-    let homeSection = `
+    function showHome() {
+        let homeSection = `
         <section class="home w-full bg-slate-200 flex flex-col px-2 py-8 gap-6 md:px-24 lg:px-48">
             <div class="px-4 w-1/2 h-96 rounded-lg overflow-hidden">
                 <img src="./hero.jpg" />
@@ -62,7 +50,10 @@ export function renderHtml(){
                     Алмалинский район, Алматы, 050008</p>
             </div>
         </section>`;
+        return main.innerHTML = homeSection;
 
+    }
+    
     let menuSection = `
         <section class="menu w-full bg-slate-200 flex flex-col px-2 md:px-24 lg:px-48 py-8 gap-6">
                 <h1 class="text-5xl font-bold px-4 py-4">Menu</h1>
@@ -150,7 +141,7 @@ export function renderHtml(){
                         </div>             
         </section>`;
 
-        let contactsSection = `
+    let contactsSection = `
             <section class="contacts w-full bg-slate-200 flex flex-col px-2 md:px-24 lg:px-48 py-8 gap-6">
                 <h1  class="text-5xl font-bold px-4 py-4 self-center">Our contacts</h1>
                 <div class="socials px-4 flex flex-col gap-4">
@@ -186,7 +177,6 @@ export function renderHtml(){
             </section>`;
 
 
-    main.innerHTML += navBar;
     main.innerHTML += homeSection;
     main.innerHTML += menuSection;
     main.innerHTML += contactsSection;
