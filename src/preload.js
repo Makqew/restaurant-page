@@ -1,7 +1,5 @@
-// Trying to implement tabs
-export function renderHtml(){
-    let main = document.getElementsByTagName('main')[0];
-    function showHome() {
+    export function showHome() {
+        let main = document.getElementsByTagName('main')[0];
         let homeSection = `
         <section class="home w-full bg-slate-200 flex flex-col px-2 py-8 gap-6 md:px-24 lg:px-48">
             <div class="px-4 w-1/2 h-96 rounded-lg overflow-hidden">
@@ -50,11 +48,13 @@ export function renderHtml(){
                     Алмалинский район, Алматы, 050008</p>
             </div>
         </section>`;
-        return main.innerHTML = homeSection;
+        main.innerHTML = homeSection;
 
     }
     
-    let menuSection = `
+    export function showMenu() {
+        let main = document.getElementsByTagName('main')[0];
+        let menuSection = `
         <section class="menu w-full bg-slate-200 flex flex-col px-2 md:px-24 lg:px-48 py-8 gap-6">
                 <h1 class="text-5xl font-bold px-4 py-4">Menu</h1>
                 <div class="breakfast list px-4">
@@ -140,10 +140,14 @@ export function renderHtml(){
                             <span class="text-2xl font-bold text-sky-600 w-1/4 text-right">3 550 T</span>
                         </div>             
         </section>`;
+        main.innerHTML = menuSection;
+    }
 
-    let contactsSection = `
-            <section class="contacts w-full bg-slate-200 flex flex-col px-2 md:px-24 lg:px-48 py-8 gap-6">
-                <h1  class="text-5xl font-bold px-4 py-4 self-center">Our contacts</h1>
+export function showContacts() {
+    let main = document.getElementsByTagName('main')[0];
+     let contactsSection = `
+            <section class="contacts h-full w-full bg-slate-200 flex flex-col px-2 md:px-24 lg:px-48 py-8 gap-6">
+                <h1 class="text-5xl font-bold px-4 py-4 mt-6 self-center">Our contacts</h1>
                 <div class="socials px-4 flex flex-col gap-4">
                     <div class="self-center">
                         <i></i><p class="text-xl">+7-701-200-10-60</p>
@@ -177,10 +181,11 @@ export function renderHtml(){
             </section>`;
 
 
-    main.innerHTML += homeSection;
-    main.innerHTML += menuSection;
-    main.innerHTML += contactsSection;
+    main.innerHTML = contactsSection;
 
-    console.log('it is working my dude')
 }
+    // 
+   
+    console.log('it is working my dude')
+
 

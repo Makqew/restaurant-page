@@ -1,9 +1,12 @@
 import "./styles.css";
-import {renderHtml} from './preload'
+import {showHome} from './preload';
+import {showMenu} from './preload';
+import {showContacts} from './preload';
 console.log('it is working');
 
 document.addEventListener("DOMContentLoaded", () =>{
     let body = document.getElementsByTagName('body')[0];
+    let main = document.createElement('main');
 
     let navBar = document.createElement('nav');
     navBar.classList.add("w-full", "bg-slate-100");
@@ -23,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     ul.appendChild(liLogo);
 
     class listItem {
-        constructor(innerText) {
+        constructor(innerText, showFunction) {
             this.innerText = innerText,
                 this.addText = function () {
                     let li = document.createElement('li');
@@ -33,20 +36,21 @@ document.addEventListener("DOMContentLoaded", () =>{
                     li.appendChild(text);
                     ul.appendChild(li);
                     
-                    li.addEventListener('click', renderHtml.showHome);
+                    li.addEventListener('click', showFunction);
                 };
         }
     }
     
-    const homeTab = new listItem('Home');
+    const homeTab = new listItem('Home', showHome);
     homeTab.addText();
 
-    const menuTab = new listItem('Menu');
+    const menuTab = new listItem('Menu', showMenu);
     menuTab.addText();
 
-    const contactsTab = new listItem('Contacts');
+    const contactsTab = new listItem('Contacts', showContacts);
     contactsTab.addText();
 
     navBar.appendChild(ul);
     body.appendChild(navBar);
+    body.appendChild(main);
 });
