@@ -48,7 +48,7 @@
                     Алмалинский район, Алматы, 050008</p>
             </div>
         </section>`;
-        main.innerHTML = homeSection;
+        return main.innerHTML = homeSection;
 
     }
     
@@ -140,7 +140,7 @@
                             <span class="text-2xl font-bold text-sky-600 w-1/4 text-right">3 550 T</span>
                         </div>             
         </section>`;
-        main.innerHTML = menuSection;
+        return main.innerHTML = menuSection;
     }
 
 export function showContacts() {
@@ -181,7 +181,7 @@ export function showContacts() {
             </section>`;
 
 
-    main.innerHTML = contactsSection;
+    return main.innerHTML = contactsSection;
 
 }
     // 
